@@ -8,7 +8,7 @@ import PageCatalog from './pages/page-catalog';
 import Main from './pages/main';
 
 function App() {
-	function renderPage(route, navigator) {
+	function _renderPage(route, navigator) {
 		return (
 			<route.component
 				key={route.key}
@@ -19,7 +19,7 @@ function App() {
 
 	return (
 		<Navigator
-			renderPage={renderPage}
+			renderPage={_renderPage}
 			initialRoute={{
 				component: Main,
 				key: PageCatalog.MAIN,
