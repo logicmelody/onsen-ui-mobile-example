@@ -28,7 +28,7 @@ function Main({
 					<Tab
 						key={PageCatalog.HOME}
 						label='首頁'
-						icon="ion-home"
+						icon="md-home"
 					/>
 				),
 			},
@@ -43,7 +43,7 @@ function Main({
 					<Tab
 						key={PageCatalog.KAI_JIANG}
 						label='開獎'
-						icon="ion-home"
+						icon="fa-file"
 					/>
 				),
 			},
@@ -58,7 +58,7 @@ function Main({
 					<Tab
 						key={PageCatalog.ATM}
 						label='充提款'
-						icon="ion-home"
+						icon="fa-car"
 					/>
 				),
 			},
@@ -73,7 +73,7 @@ function Main({
 					<Tab
 						key={PageCatalog.SETTINGS}
 						label='我的'
-						icon="ion-home"
+						icon="md-face"
 					/>
 				),
 			},
