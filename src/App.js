@@ -25,6 +25,7 @@ function App() {
 				component: Main,
 				key: PageCatalog.MAIN,
 			}}
+			animation='lift-md'
 		/>
 	);
 }
