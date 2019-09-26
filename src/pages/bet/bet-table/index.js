@@ -3,11 +3,16 @@ import {
 	Page,
 	Toolbar,
 	ToolbarButton,
+	Button,
 } from 'react-onsenui';
+
+import PageCatalog from '../../page-catalog';
+
+import XinYong from '../xin-yong';
 
 function BetTable({
 	navigator,
-	balance,
+	innerNavigator,
 }) {
 	function _renderToolbar() {
 		return (
@@ -25,13 +30,29 @@ function BetTable({
 		);
 	}
 
+	function _handleClickXinYongButton() {
+		innerNavigator.pushPage(
+			{
+				component: XinYong,
+				key: PageCatalog.XIN_YONG,
+				passProps: {
+					balance: 100,
+				}
+			}
+		);
+	}
+
 	return (
 		<Page
 			renderToolbar={_renderToolbar}
 		>
-			<h1>
-				{`Wallet balance = ${balance}`}
-			</h1>
+			<Button
+				modifier='material large'
+				ripple
+				onClick={_handleClickXinYongButton}
+			>
+				信用玩法
+			</Button>
 		</Page>
 	);
 }

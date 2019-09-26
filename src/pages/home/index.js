@@ -10,7 +10,7 @@ import OnsenUi from 'onsenui';
 
 import PageCatalog from '../page-catalog';
 
-import BetTable from '../bet-table';
+import Bet from '../bet';
 
 function Home({
 	navigator,
@@ -42,11 +42,8 @@ function Home({
 	function _handleClickBetTableButton() {
 		navigator.pushPage(
 			{
-				component: BetTable,
-				key: PageCatalog.BET_TABLE,
-				passProps: {
-					balance: 100,
-				},
+				component: Bet,
+				key: PageCatalog.BET,
 			}
 		);
 	}
