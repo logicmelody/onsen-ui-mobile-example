@@ -2,19 +2,20 @@ import React from 'react';
 import {
 	Page,
 	Toolbar,
-	BackButton,
+	ToolbarButton,
 } from 'react-onsenui';
 
-function BetTable(props) {
-	console.log('BetTable', props);
-
+function BetTable({
+	navigator,
+	balance,
+}) {
 	function _renderToolbar() {
 		return (
 			<Toolbar>
 				<div className='left'>
-					<BackButton>
-						Back
-					</BackButton>
+					<ToolbarButton onClick={() => navigator.popPage()}>
+							關閉
+					</ToolbarButton>
 				</div>
 
 				<div className="center">
@@ -28,7 +29,9 @@ function BetTable(props) {
 		<Page
 			renderToolbar={_renderToolbar}
 		>
-			Bet Table
+			<h1>
+				{`Wallet balance = ${balance}`}
+			</h1>
 		</Page>
 	);
 }
