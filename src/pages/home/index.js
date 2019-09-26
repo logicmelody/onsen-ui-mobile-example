@@ -18,6 +18,10 @@ function Home({
 	function _renderToolbar() {
 		return (
 			<Toolbar>
+				<div className="left">
+					華語娛樂
+				</div>
+
 				<div className="center">
 					Home
 				</div>
@@ -40,6 +44,9 @@ function Home({
 			{
 				component: BetTable,
 				key: PageCatalog.BET_TABLE,
+				passProps: {
+					balance: 100,
+				},
 			}
 		);
 	}

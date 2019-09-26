@@ -13,6 +13,7 @@ function App() {
 			<route.component
 				key={route.key}
 				navigator={navigator}
+				{...route.passProps}
 			/>
 		);
 	}
