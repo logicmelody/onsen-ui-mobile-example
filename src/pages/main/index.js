@@ -5,8 +5,6 @@ import {
 	Tab
 } from 'react-onsenui';
 
-import PageCatalog from '../page-catalog';
-
 import Home from '../home';
 import KaiJiang from '../kai-jiang';
 import Atm from '../atm';
@@ -20,13 +18,11 @@ function Main({
 			{
 				content: (
 					<Home
-						key={PageCatalog.HOME}
 						navigator={navigator}
 					/>
 				),
 				tab: (
 					<Tab
-						key={PageCatalog.HOME}
 						label='首頁'
 						icon="md-home"
 					/>
@@ -35,13 +31,11 @@ function Main({
 			{
 				content: (
 					<KaiJiang
-						key={PageCatalog.KAI_JIANG}
 						navigator={navigator}
 					/>
 				),
 				tab: (
 					<Tab
-						key={PageCatalog.KAI_JIANG}
 						label='開獎'
 						icon="fa-file"
 					/>
@@ -50,13 +44,11 @@ function Main({
 			{
 				content: (
 					<Atm
-						key={PageCatalog.ATM}
 						navigator={navigator}
 					/>
 				),
 				tab: (
 					<Tab
-						key={PageCatalog.ATM}
 						label='充提款'
 						icon="fa-car"
 					/>
@@ -65,13 +57,11 @@ function Main({
 			{
 				content: (
 					<Settings
-						key={PageCatalog.SETTINGS}
 						navigator={navigator}
 					/>
 				),
 				tab: (
 					<Tab
-						key={PageCatalog.SETTINGS}
 						label='我的'
 						icon="md-face"
 					/>
