@@ -44,6 +44,9 @@ function Home({
 			{
 				component: Bet,
 				key: PageCatalog.BET,
+			},
+			{
+				animation: 'lift-md',
 			}
 		);
 	}
