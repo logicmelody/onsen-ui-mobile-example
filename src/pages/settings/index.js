@@ -7,7 +7,11 @@ function Settings({
 	navigator,
 }) {
 	return (
-		<Page>
+		<Page
+			onInit={() => console.log("Settings onInit")}
+			onShow={() => console.log("Settings onShow")}
+			onHide={() => console.log("Settings onHide")}
+		>
 			<h1>Settings</h1>
 		</Page>
 	);

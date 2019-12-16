@@ -54,6 +54,9 @@ function Home({
 	return (
 		<Page
 			renderToolbar={_renderToolbar}
+			onInit={() => console.log("Home onInit")}
+			onShow={() => console.log("Home onShow")}
+			onHide={() => console.log("Home onHide")}
 		>
 			<Button
 				modifier='material large'

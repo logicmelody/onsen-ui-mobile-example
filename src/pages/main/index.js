@@ -10,6 +10,8 @@ import KaiJiang from '../kai-jiang';
 import Atm from '../atm';
 import Settings from '../settings';
 
+import Icon from "../../img/play-icon.png";
+
 function Main({
 	navigator,
 }) {
@@ -23,9 +25,9 @@ function Main({
 				),
 				tab: (
 					<Tab
-						label='首頁'
-						icon="md-home"
-					/>
+					>
+						<img src={Icon} alt="Icon" />
+					</Tab>
 				),
 			},
 			{

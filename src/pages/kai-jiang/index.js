@@ -7,7 +7,11 @@ function KaiJiang({
 	navigator,
 }) {
 	return (
-		<Page>
+		<Page
+			onInit={() => console.log("KaiJiang onInit")}
+			onShow={() => console.log("KaiJiang onShow")}
+			onHide={() => console.log("KaiJiang onHide")}
+		>
 			<h1>KaiJiang</h1>
 		</Page>
 	);
