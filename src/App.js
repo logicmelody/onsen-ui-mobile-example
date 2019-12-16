@@ -9,6 +9,8 @@ import Main from './pages/main';
 
 function App() {
 	function _renderPage(route, navigator) {
+		console.log('route object = ', route);
+
 		return (
 			<route.component
 				key={route.key}
