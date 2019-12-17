@@ -24,9 +24,13 @@ function Main({
 					/>
 				),
 				tab: (
-					<Tab
-					>
-						<img src={Icon} alt="Icon" />
+					<Tab>
+						<img
+							src={Icon}
+							alt="Icon"
+							width={40}
+							height={40}
+						/>
 					</Tab>
 				),
 			},
