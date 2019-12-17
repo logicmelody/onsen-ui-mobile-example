@@ -1,3 +1,5 @@
+This project is for practicing using OnsenUI to build a PWA app.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
