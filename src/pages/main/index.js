@@ -10,7 +10,8 @@ import KaiJiang from '../kai-jiang';
 import Atm from '../atm';
 import Settings from '../settings';
 
-import Icon from "../../img/play-icon.png";
+import HomeIcon from '../../img/tabs/home.png';
+import HomeIconSelected from '../../img/tabs/home-selected.png';
 
 const TabIndexEnum = {
 	HOME: 0,
@@ -32,16 +33,7 @@ function Main({
 						navigator={navigator}
 					/>
 				),
-				tab: (
-					<Tab>
-						<img
-							src={Icon}
-							alt="Icon"
-							width={40}
-							height={40}
-						/>
-					</Tab>
-				),
+				tab: _renderHomeTab(),
 			},
 			{
 				content: (
@@ -83,6 +75,21 @@ function Main({
 				),
 			},
 		];
+	}
+
+	function _renderHomeTab() {
+		const icon = TabIndexEnum.HOME === tabIndex ? HomeIconSelected : HomeIcon;
+
+		return (
+			<Tab>
+				<img
+					src={icon}
+					alt="home-tab"
+					width={40}
+					height={40}
+				/>
+			</Tab>
+		);
 	}
 
 	return (
