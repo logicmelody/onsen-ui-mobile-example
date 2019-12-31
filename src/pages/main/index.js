@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	Page,
 	Tabbar,
@@ -12,9 +12,18 @@ import Settings from '../settings';
 
 import Icon from "../../img/play-icon.png";
 
+const TabIndexEnum = {
+	HOME: 0,
+	KAI_JIANG: 1,
+	ATM: 2,
+	SETTINGS: 3,
+};
+
 function Main({
 	navigator,
 }) {
+	const [tabIndex, setTabIndex] = useState(TabIndexEnum.HOME);
+
 	function _renderTabs() {
 		return [
 			{
@@ -80,8 +89,14 @@ function Main({
 		<Page>
 			<Tabbar
 				position='bottom'
-				renderTabs={_renderTabs}
 				animation='none'
+				index={tabIndex}
+				renderTabs={_renderTabs}
+				onPreChange={({ index }) => {
+					if (index !== tabIndex) {
+						setTabIndex(index)
+					}
+				}}
 			/>
 		</Page>
 	);
