@@ -13,6 +13,15 @@ import Settings from '../settings';
 import HomeIcon from '../../img/tabs/home.png';
 import HomeIconSelected from '../../img/tabs/home-selected.png';
 
+import KaiJiangIcon from '../../img/tabs/kai-jiang.png';
+import KaiJiangIconSelected from '../../img/tabs/kai-jiang-selected.png';
+
+import AtmIcon from '../../img/tabs/atm.png';
+import AtmIconSelected from '../../img/tabs/atm-selected.png';
+
+import SettingsIcon from '../../img/tabs/settings.png';
+import SettingsIconSelected from '../../img/tabs/settings-selected.png';
+
 const TabIndexEnum = {
 	HOME: 0,
 	KAI_JIANG: 1,
@@ -33,7 +42,7 @@ function Main({
 						navigator={navigator}
 					/>
 				),
-				tab: _renderHomeTab(),
+				tab: _renderTab(TabIndexEnum.HOME, HomeIcon, HomeIconSelected),
 			},
 			{
 				content: (
@@ -41,12 +50,7 @@ function Main({
 						navigator={navigator}
 					/>
 				),
-				tab: (
-					<Tab
-						label='開獎'
-						icon="fa-file"
-					/>
-				),
+				tab: _renderTab(TabIndexEnum.KAI_JIANG, KaiJiangIcon, KaiJiangIconSelected),
 			},
 			{
 				content: (
@@ -54,12 +58,7 @@ function Main({
 						navigator={navigator}
 					/>
 				),
-				tab: (
-					<Tab
-						label='充提款'
-						icon="fa-car"
-					/>
-				),
+				tab: _renderTab(TabIndexEnum.ATM, AtmIcon, AtmIconSelected),
 			},
 			{
 				content: (
@@ -67,24 +66,19 @@ function Main({
 						navigator={navigator}
 					/>
 				),
-				tab: (
-					<Tab
-						label='我的'
-						icon="md-face"
-					/>
-				),
+				tab: _renderTab(TabIndexEnum.SETTINGS, SettingsIcon, SettingsIconSelected),
 			},
 		];
 	}
 
-	function _renderHomeTab() {
-		const icon = TabIndexEnum.HOME === tabIndex ? HomeIconSelected : HomeIcon;
+	function _renderTab(where = TabIndexEnum.HOME, normalIcon, selectedIcon) {
+		const icon = where === tabIndex ? selectedIcon : normalIcon;
 
 		return (
 			<Tab>
 				<img
 					src={icon}
-					alt="home-tab"
+					alt={where}
 					width={40}
 					height={40}
 				/>
