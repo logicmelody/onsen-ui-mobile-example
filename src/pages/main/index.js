@@ -42,22 +42,7 @@ function Main({
 						navigator={navigator}
 					/>
 				),
-				tab: _renderTab(
-					TabIndexEnum.HOME,
-					<img
-						src={HomeIcon}
-						alt='home'
-						width={40}
-						height={40}
-					/>
-					,
-					<img
-						src={HomeIconSelected}
-						alt='home-selected'
-						width={40}
-						height={40}
-					/>
-				),
+				tab: _renderTab(TabIndexEnum.HOME, HomeIcon, HomeIconSelected),
 			},
 			{
 				content: (
@@ -65,22 +50,7 @@ function Main({
 						navigator={navigator}
 					/>
 				),
-				tab: _renderTab(
-					TabIndexEnum.KAI_JIANG,
-					<img
-						src={KaiJiangIcon}
-						alt='kai-jiang'
-						width={40}
-						height={40}
-					/>
-					,
-					<img
-						src={KaiJiangIconSelected}
-						alt='kai-jiang-selected'
-						width={40}
-						height={40}
-					/>
-				),
+				tab: _renderTab(TabIndexEnum.KAI_JIANG, KaiJiangIcon, KaiJiangIconSelected),
 			},
 			{
 				content: (
@@ -88,22 +58,7 @@ function Main({
 						navigator={navigator}
 					/>
 				),
-				tab: _renderTab(
-					TabIndexEnum.ATM,
-					<img
-						src={AtmIcon}
-						alt='atm'
-						width={40}
-						height={40}
-					/>
-					,
-					<img
-						src={AtmIconSelected}
-						alt='atm-selected'
-						width={40}
-						height={40}
-					/>
-				),
+				tab: _renderTab(TabIndexEnum.ATM, AtmIcon, AtmIconSelected),
 			},
 			{
 				content: (
@@ -111,30 +66,22 @@ function Main({
 						navigator={navigator}
 					/>
 				),
-				tab: _renderTab(
-					TabIndexEnum.SETTINGS,
-					<img
-						src={SettingsIcon}
-						alt='settings'
-						width={40}
-						height={40}
-					/>
-					,
-					<img
-						src={SettingsIconSelected}
-						alt='settings-selected'
-						width={40}
-						height={40}
-					/>
-				),
+				tab: _renderTab(TabIndexEnum.SETTINGS, SettingsIcon, SettingsIconSelected),
 			},
 		];
 	}
 
-	function _renderTab(where = TabIndexEnum.HOME, normalContent, selectedcontent) {
+	function _renderTab(where = TabIndexEnum.HOME, normalIcon, selectedIcon) {
+		const icon = where === tabIndex ? selectedIcon : normalIcon;
+
 		return (
 			<Tab>
-				{where === tabIndex ? selectedcontent : normalContent}
+				<img
+					src={icon}
+					alt={where}
+					width={40}
+					height={40}
+				/>
 			</Tab>
 		);
 	}
