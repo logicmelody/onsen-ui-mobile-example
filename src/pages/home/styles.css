@@ -1,0 +1,6 @@
+.right-toolbar-button-container.right-toolbar-button-container {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 10px;
+}

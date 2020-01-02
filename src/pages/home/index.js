@@ -8,6 +8,9 @@ import {
 } from 'react-onsenui';
 import OnsenUi from 'onsenui';
 
+import HomeIcon from '../../img/tabs/home.png';
+import './styles.css';
+
 import PageCatalog from '../page-catalog';
 
 import Bet from '../bet';
@@ -26,10 +29,14 @@ function Home({
 					Home
 				</div>
 
-				<div className="right">
-					<ToolbarButton onClick={_handleClickWallets}>
-						<Icon icon="fa-wallet" />
-					</ToolbarButton>
+				<div className="right right-toolbar-button-container">
+					<img
+						onClick={_handleClickWallets}
+						src={HomeIcon}
+						alt={"toolbar-button"}
+						width={30}
+						height={30}
+					/>
 				</div>
 			</Toolbar>
 		);
