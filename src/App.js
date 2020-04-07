@@ -6,6 +6,7 @@ import {
 import PageCatalog from './pages/page-catalog';
 
 import Main from './pages/main';
+import Login from './pages/login';
 
 function App() {
 	function _renderPage(route, navigator) {
@@ -24,8 +25,8 @@ function App() {
 		<Navigator
 			renderPage={_renderPage}
 			initialRoute={{
-				component: Main,
-				key: PageCatalog.MAIN,
+				component: Login,
+				key: PageCatalog.Login,
 			}}
 		/>
 	);

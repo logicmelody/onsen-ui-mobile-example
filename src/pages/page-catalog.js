@@ -1,4 +1,6 @@
 const ScreenCatalog = {
+	LOGIN: 'LOGIN',
+
 	MAIN: 'MAIN',
 	HOME: 'HOME',
 	SETTINGS: 'SETTINGS',
