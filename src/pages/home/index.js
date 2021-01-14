@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState, } from 'react';
 import {
 	Page,
 	Toolbar,
-	ToolbarButton,
-	Icon,
 	Button,
 } from 'react-onsenui';
 import OnsenUi from 'onsenui';
@@ -18,6 +16,15 @@ import Bet from '../bet';
 function Home({
 	navigator,
 }) {
+	const [count, setCount] = useState(0);
+
+	useEffect(() => {
+		if (count === 5) {
+			generateMobileUrlHandler('https://www.nba.com/').open();
+		}
+
+	}, [count]);
+
 	function _renderToolbar() {
 		return (
 			<Toolbar>
@@ -77,15 +84,30 @@ function Home({
 				modifier='material large'
 				ripple
 				onClick={() => {
-					let tempWindow = window.open('_blank');
-
-					tempWindow.location = 'https://www.nba.com/';
+					setCount(count + 1);
 				}}
 			>
-				Go To NBA
+				Add Count
 			</Button>
 		</Page>
 	);
+}
+
+function generateMobileUrlHandler(url) {
+	let windowReference = window.open('about:blank', '_blank');
+
+	return {
+		open: function() {
+			windowReference.location = url;
+		},
+
+		// open: function() {
+		// 	setTimeout(() => {
+		// 		windowReference.location = url;
+
+		// 	}, 500);
+		// },
+	};
 }
 
 export default Home;
