@@ -72,6 +72,18 @@ function Home({
 			>
 				Bet Table
 			</Button>
+
+			<Button
+				modifier='material large'
+				ripple
+				onClick={() => {
+					let tempWindow = window.open('_blank');
+
+					tempWindow.location = 'https://www.nba.com/';
+				}}
+			>
+				Go To NBA
+			</Button>
 		</Page>
 	);
 }
