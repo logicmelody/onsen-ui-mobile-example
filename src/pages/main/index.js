@@ -104,9 +104,6 @@ function Main({
 						loop: false,
 						autoplay: true,
 						animationData: where === tabIndex ? selectedAnimation : normalAnimation,
-						rendererSettings: {
-							preserveAspectRatio: 'xMidYMid slice',
-						},
 					}}
 					width={30}
 					height={30}
